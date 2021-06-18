@@ -12,21 +12,22 @@ const CartScreen = () => {
   const remerasCarrito = carritoContext.carrito;
 
 
-  const calcularPrecioTotal = () => {};
-
+  console.log(remerasCarrito.lenght);
+  
   return (
+    
     <div className="cartscreen">
       <div className="cartscreen__left">
         <h2>Shopping cart</h2>
         {remerasCarrito.map((remera) => (
-          <CartItem key={remera.remera} remeraId={remera.remera} />
+          <CartItem key={remera.remeraId} remeraId={remera.remeraId} />
         ))}
       </div>
 
       <div className="cartscreen__right">
         <div className="cartscreen__info">
-          <p>Subtotal (0) items</p>
-          <p>$499.99</p>
+          <p>Subtotal {remerasCarrito.lenght} items</p>
+          <p></p>
         </div>
 
         <div>

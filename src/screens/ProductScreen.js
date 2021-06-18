@@ -25,8 +25,11 @@ const ProductScreen = () => {
     let selectSize = document.getElementById("selectSize");
     let size = selectSize.value;
     const remeraAgregada = {
-      remera: remera.id,
-      size: size,
+      remeraId: remera.id,
+      remeraPrice: remera.price,
+      remeraImage: remera.frontimgurl,
+      remeraSize: size,
+      remeraName: remera.name
     };
     setCarrito([...carrito, remeraAgregada]);
   }
@@ -80,7 +83,7 @@ const ProductScreen = () => {
               {remera.m_stock > 0 ? (
                 <option value="4">M</option>
               ) : (
-                <option selected disabled value="4">
+                <option disabled value="4">
                   M
                 </option>
               )}
