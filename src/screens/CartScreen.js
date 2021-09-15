@@ -12,12 +12,11 @@ const CartScreen = () => {
   const remerasCarrito = carritoContext.carrito;
 
   function calcularPrecio(){
-    console.log("estoy en calcular precio");
     var suma = 0;
     remerasCarrito.forEach(remera => {
       suma += parseInt(remera.remeraPrice);
     });
-    console.log(suma);
+    return suma;
   }
 
   return (
@@ -33,7 +32,7 @@ const CartScreen = () => {
       <div className="cartscreen__right">
         <div className="cartscreen__info">
           <p>Subtotal ({remerasCarrito.length}) items</p>
-          <p>Price {calcularPrecio()}</p>
+          <p>Price ${calcularPrecio()}</p>
         </div>
 
         <div>

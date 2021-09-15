@@ -24,14 +24,16 @@ const ProductScreen = () => {
   function agregarProductoAlCarro() {
     let selectSize = document.getElementById("selectSize");
     let size = selectSize.value;
-    const remeraAgregada = {
-      remeraId: remera.id,
-      remeraPrice: remera.price,
-      remeraImage: remera.frontimgurl,
-      remeraSize: size,
-      remeraName: remera.name,
-    };
-    setCarrito([...carrito, remeraAgregada]);
+    if(size!==""){
+      const remeraAgregada = {
+        remeraId: remera.id,
+        remeraPrice: remera.price,
+        remeraImage: remera.frontimgurl,
+        remeraSize: size,
+        remeraName: remera.name,
+      };
+      setCarrito([...carrito, remeraAgregada]);
+    }
   }
 
   return (
