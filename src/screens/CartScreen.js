@@ -1,5 +1,5 @@
 import "./CartScreen.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 //components
 import CartItem from "../components/CartItem";
@@ -11,11 +11,17 @@ const CartScreen = () => {
   const carritoContext = React.useContext(CarritoContext);
   const remerasCarrito = carritoContext.carrito;
 
+  function calcularPrecio(){
+    console.log("estoy en calcular precio");
+    var suma = 0;
+    remerasCarrito.forEach(remera => {
+      suma += parseInt(remera.remeraPrice);
+    });
+    console.log(suma);
+  }
 
-  console.log(remerasCarrito.lenght);
-  
   return (
-    
+
     <div className="cartscreen">
       <div className="cartscreen__left">
         <h2>Shopping cart</h2>
@@ -26,8 +32,8 @@ const CartScreen = () => {
 
       <div className="cartscreen__right">
         <div className="cartscreen__info">
-          <p>Subtotal {remerasCarrito.lenght} items</p>
-          <p></p>
+          <p>Subtotal ({remerasCarrito.length}) items</p>
+          <p>Price {calcularPrecio()}</p>
         </div>
 
         <div>

@@ -29,34 +29,26 @@ const ProductScreen = () => {
       remeraPrice: remera.price,
       remeraImage: remera.frontimgurl,
       remeraSize: size,
-      remeraName: remera.name
+      remeraName: remera.name,
     };
     setCarrito([...carrito, remeraAgregada]);
   }
 
   return (
     <div className="productscreen">
-      Product Screen
       <div className="productscreen__left">
-        <div className="left__image">
+        <div className="image">
           <img src={remera.frontimgurl} alt="product name" />
         </div>
 
-        <div className="left__info">
+        <div className="info">
           <p className="left__name">{remera.name}</p>
           <p>${remera.price}</p>
           <p>{remera.description}</p>
-        </div>
-      </div>
-      <div className="productscreen__right">
-        <div className="right__info">
-          <p>
-            Price: <span>$2000</span>
-          </p>
-          <p>
-            Status: <span>In Stock</span>
-          </p>
-          <p>
+
+          <div className="info__venta">
+
+          <p className="info__size">
             Size:
             <select id="selectSize">
               {remera.xxs_stock > 0 ? (
@@ -112,9 +104,12 @@ const ProductScreen = () => {
           </p>
           <p>
             <button type="button" onClick={agregarProductoAlCarro}>
-              Add to cart
+              ADD TO CART
             </button>
           </p>
+
+          </div>
+          
         </div>
       </div>
     </div>

@@ -1,28 +1,23 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import iwaLogo from "../resources/iwa-logo.gif";
 
 const Navbar = ({click}) => {
   return (
     <nav className="navbar">
-      <div className="navbar_logo">
+      
         <Link to="/">
-          <img src={iwaLogo} alt="iwa-logo" />
+          <p className="navbar_title">INTERNET WAREHOUSE APPAREL</p>
         </Link>
-      </div>
 
       <ul className="navbar_links">
         <li>
-          <Link to="/cart" className="cart_link">
-            <i className="fas fa-shopping-cart"></i>
-            <span>
-              Cart
-              <span className="cartlogo_badge">0</span>
-            </span>
-          </Link>
+          <Link to="/">PRODUCTOS</Link>
         </li>
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/cart">CARRO</Link>
+        </li>
+        <li>
+          <Link to="/info">INFO.</Link>
         </li>
       </ul>
 

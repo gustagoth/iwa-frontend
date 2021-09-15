@@ -10,17 +10,14 @@ const Product = ({
   backimgurl,
 }) => {
   return (
-    <div className="product">
-      <Link to={`/product/${productId}`} className="product__link">
-        <img src={frontimgurl} alt={name} />
-
-        <div className="product__info">
-          <p className="info__name">{name}</p>
-
-          <p className="info__name">${price}</p>
+    <Link to={`/product/${productId}`} className="product__link">
+      <div className="hvrbox">
+        <img src={frontimgurl} alt={name} className="hvrbox-layer_bottom" />
+        <div className="hvrbox-layer_top">
+          <div className="hvrbox-text">{name}</div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

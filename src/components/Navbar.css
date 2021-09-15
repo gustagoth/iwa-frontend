@@ -1,25 +1,29 @@
 .navbar {
     width: 100%;
-    background-image: url("../resources/navbar-glitch.gif");
     background-size: cover;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0.5rem;
+    padding-top: 1rem;
     z-index: 50;
 }
 
-.navbar_logo {
-    color: #00FF41;
-    width: 90px;
-    height: 90px;
+.navbar_title {
+    display: inline-block;
+    text-decoration: none !important;
+    color: #070707;
     cursor: pointer;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 1rem;
 }
 
 .navbar_links {
     display: flex;
     list-style: none;
     align-items: center;
+    padding-right: 4rem;
 }
 
 .navbar_links>li {
@@ -28,31 +32,37 @@
 
 .navbar_links>li>a {
     text-decoration: none;
-    color:white;
-    font-size: 1rem;
+    color: #070707;
+    font-size: small;
+    font-weight: 400;
     display: flex;
     align-items: center;
     margin-right: 6px;
+    position: relative;
 }
 
-.navbar_links>li>a:hover {
-    color: lime;
+.navbar_links>li>a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #070707;
+    transform-origin: bottom;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar_links>li>a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom ;
 }
 
 .navbar_links>li>a>span {
     display: flex;
     align-items: center;
     margin-left: 8px;
-}
-
-
-.cartlogo_badge {
-    width: 26px;
-    height: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .hamburger_menu {
@@ -79,10 +89,7 @@
     .navbar_links {
         display: none;
     }
-
-    .hamburger_menu{
+    .hamburger_menu {
         display: flex;
     }
 }
-
-

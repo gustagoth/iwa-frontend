@@ -18,18 +18,20 @@ const HomeScreen = () => {
 
   return (
     <div className="homescreen">
-      <h2 className="homescreen__title">Latest products</h2>
       <div className="homescreen__products">
-        {remeras.map((remera) => (
-          <Product
-            key={remera.id}
-            productId={remera.id}
-            name={remera.name}
-            price={remera.price}
-            frontimgurl={remera.frontimgurl}
-            description={remera.description}
-            backimgurl={remera.backimgurl}
-          />
+        {remeras.map((remera,key) => (
+          <div className="remera" key={key}>
+            <Product
+              key={remera.id}
+              productId={remera.id}
+              name={remera.name}
+              price={remera.price}
+              frontimgurl={remera.frontimgurl}
+              description={remera.description}
+              backimgurl={remera.backimgurl}
+              onlyImage={true}
+            />
+          </div>
         ))}
       </div>
     </div>

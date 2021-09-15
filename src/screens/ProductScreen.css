@@ -1,106 +1,64 @@
 .productscreen {
-    max-width: 1300px;
-    margin: 1rem auto;
-    display: flex;
-  }
-  
-  .productscreen__left {
-    display: flex;
-    flex: 0.8;
-  }
-  
-  .left__image {
-    margin: 1rem;
-    flex: 0.6;
-  }
-  
-  .left__info {
-    margin: 1rem;
-    flex: 0.4;
-    color: white;
-    height: fit-content;
-    font-size: 1rem;
-  }
-  
-  .left__name {
-    font-weight: bold;
-    font-size: 1.4rem;
-  }
-  
-  .left__info > p,
-  .right__info > p {
-    padding: 1rem;
-  }
-  
-  .productscreen__right {
-    flex: 0.2;
-  }
-  
-  .right__info {
-    border: 1px solid white;
-    margin: 250px;
-    margin: 1rem;
-    color: white;
-  }
-  
-  .right__info > p {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat (2, 1fr);
-  }
-  
-  .right__info > p > button {
-    grid-column: 1/-1;
-    padding: 10px 16px;
-    font-family: Helvetica;
-    font-size: 1rem;
-    background-color:black;
-    color: white;
-    cursor: pointer;
-    border: 1px solid white;
-  }
-  
-  .right__info > p > button:hover {
-    background-color: white;
-    border: 1px solid black;
-    color: black;
-  }
-  
-  .right__info select {
-    outline: none;
-    padding: 10px 10px;
-    font-family: Helvetica;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-  }
-  
-  @media (max-width: 960px) {
-    .productscreen {
-      flex-direction: column;
-    }
-  
-    .productscreen__left {
-      flex-direction: column;
-      flex: 1;
-    }
-  
-    .left__image {
-      flex: 1;
-    }
-  
-    .left__info {
-      flex: 1;
-    }
-  
-    .productscreen__right {
-      flex: 1;
-      padding: 1rem;
-    }
-  
-    .right__info {
-      width: 100%;
-      margin: 0;
-    }
-  }
-  
+  max-width: 1300px;
+  margin: 1rem auto;
+  display: flex;
+}
+
+.productscreen__left {
+  display: flex;
+  flex: 1;
+}
+
+.image {
+  margin: 1rem;
+  flex: 0.5;
+}
+
+.info {
+  margin: 1rem;
+  flex: 0.4;
+  color: #070707;
+  font-size: small;
+}
+
+.left__name {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.info > p,
+.info__venta > p {
+  padding: 1rem;
+}
+
+.info__venta {
+  font-size: medium;
+  display: flex;
+  flex: 1;
+}
+
+.info__venta > p > button {
+  border-style: none;
+  padding: 10px 93px;
+  font-family: Montserrat;
+  font-weight: 450;
+  background-color: #303030;
+  color: #f3ede9;
+  cursor: pointer;
+}
+
+.info__venta > p > button:hover {
+  background-color:black;
+  color: #f3ede9;
+  cursor: pointer;
+}
+
+.info select {
+  border-style: none;
+  outline: none;
+  padding: 10px 10px;
+  font-family: Helvetica;
+  background-color: #f3ede9;
+  color: #070707;
+}
+

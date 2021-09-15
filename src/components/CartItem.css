@@ -6,33 +6,29 @@
     grid-template-columns: 1fr 4fr 1fr 1fr;
     gap: 8 px;
     place-items: center;
-    border: 1px solid white;
+    border: 1px solid #070707;
   }
   
   .cartitem__name {
       text-decoration: none;
-      color: white;
-  }
-  
-  .cartitem__name:hover {
-      color: lime;
+      color: #070707;
   }
   
   .cartitem__price {
-      color: white;
+      color: #070707;
   }
   
   .cartitem__deleteBtn {
       padding: 7px 12px;
-      color: white;
-      background: black;
-      border: 1px solid white;
+      color: #f3ede9;
+      background: #303030;
+      border: 1px solid #303030;
       cursor: pointer;
   }
   
   .cartitem__deleteBtn:hover{
-      color: lime;
-      border: 1px solid lime;
+      background: #070707;
+      border: 1px solid #070707;
   }
   
   @media (max-width: 700px){

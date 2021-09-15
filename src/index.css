@@ -5,11 +5,10 @@
 }
 
 body {
-  font-family: Helvetica;
+  font-family: Montserrat;
   font-size: medium;
-  color: #f4f4f4;
-  background-color: black;
-  /*background-color: #0D0208;*/
+  color: #070707;
+  background-color: #f3ede9;
 }
 
 img {
