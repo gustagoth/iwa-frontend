@@ -1,7 +1,6 @@
 .productscreen {
   max-width: 1300px;
   margin: 1rem auto;
-  display: flex;
 }
 
 .productscreen__left {
@@ -16,9 +15,10 @@
 
 .info {
   margin: 1rem;
-  flex: 0.4;
+  flex: 0.4;  
   color: #070707;
-  font-size: small;
+  font-size: medium;
+  text-transform: uppercase;
 }
 
 .left__name {
@@ -65,4 +65,13 @@
   background-color: #f3ede9;
   color: #070707;
 }
+
+.size__alert,.success__alert {
+  width: 500px;
+  height: 100px;
+  position: relative;
+  top: 70px;
+  left: 1080px;
+}
+
 

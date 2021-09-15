@@ -1,8 +1,9 @@
 import "./CartItem.css";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { CarritoContext } from "../context/carritoContext";
 
-const CartItem = ({ remeraId }) => {
+const CartItem = ({ remeraId, remeraPrice }) => {
   const [remera, setRemera] = useState([]);
   useEffect(() => {
     fetch(`/remera/${remeraId}`)
@@ -14,6 +15,16 @@ const CartItem = ({ remeraId }) => {
         console.log(err);
       });
   }, [remeraId]);
+
+  const { carrito, setCarrito } = useContext(CarritoContext);
+
+  function deleteItemFromContext() {
+    const found = carrito.findIndex(element => element.remeraId === remeraId && element.remeraPrice === remeraPrice);
+    if (found > -1) {
+      carrito.splice(found, 1);
+    }
+    setCarrito(carrito);
+  }
 
   return (
     <div className="cartitem">
@@ -29,7 +40,7 @@ const CartItem = ({ remeraId }) => {
 
       <p className="cartitem__price">${remera.price}</p>
 
-      <button className="cartitem__deleteBtn">
+      <button className="cartitem__deleteBtn" onClick={deleteItemFromContext}>
         <i className="fas fa-trash"></i>
       </button>
     </div>

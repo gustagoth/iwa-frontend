@@ -33,7 +33,7 @@
 .navbar_links>li>a {
     text-decoration: none;
     color: #070707;
-    font-size: small;
+    font-size: medium;
     font-weight: 400;
     display: flex;
     align-items: center;

@@ -2,11 +2,14 @@ import "./ProductScreen.css";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
+import sleep from "../utils/Utils";
 
 const ProductScreen = () => {
   const { id } = useParams();
 
   const [remera, setRemera] = useState([]);
+
+  const [alert, setAlert] = useState([]);
 
   const { carrito, setCarrito } = useContext(CarritoContext);
 
@@ -33,16 +36,16 @@ const ProductScreen = () => {
         remeraName: remera.name,
       };
       setCarrito([...carrito, remeraAgregada]);
+      setAlert(1);
+      await sleep(1000);
+      setAlert(0);
     } else {
-      document.getElementById("alertSize").classList.remove("hidden");
-      await sleep(2000);
-      document.getElementById("alertSize").classList.add("hidden");
+      setAlert(2);
+      await sleep(1000);
+      setAlert(0);
     }
   }
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
   return (
     <div className="productscreen">
       <div className="productscreen__left">
@@ -116,13 +119,22 @@ const ProductScreen = () => {
               </button>
             </p>
           </div>
-          <div className="hidden" id="alertSize">
-            <div class="alert alert-dark" role="alert">
-              T-SHIRT SIZE MUST BE SELECTED
-            </div>
-          </div>
         </div>
       </div>
+      {alert === 1 ? (
+        <div className="alert alert-success" role="alert">
+          SHIRT ADDED TO THE CART!
+        </div>
+      ) : (
+        ""
+      )}
+      {alert === 2 ? (
+        <div className="alert alert-danger" role="alert">
+          SHIRT SIZE MUST BE SELECTED
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

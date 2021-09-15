@@ -1,5 +1,5 @@
 import "./CartScreen.css";
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 //components
 import CartItem from "../components/CartItem";
@@ -20,19 +20,17 @@ const CartScreen = () => {
   }
 
   return (
-
     <div className="cartscreen">
       <div className="cartscreen__left">
-        <h2>Shopping cart</h2>
         {remerasCarrito.map((remera) => (
-          <CartItem key={remera.remeraId} remeraId={remera.remeraId} />
+          <CartItem key={remera.remeraId} remeraId={remera.remeraId} remeraPrice={remera.remeraPrice}/>
         ))}
       </div>
 
       <div className="cartscreen__right">
         <div className="cartscreen__info">
-          <p>Subtotal ({remerasCarrito.length}) items</p>
-          <p>Price ${calcularPrecio()}</p>
+          <p>YOU ARE GOING TO BUY ({remerasCarrito.length}) ITEMS</p>
+          <p>TOTAL PRICE ${calcularPrecio()}</p>
         </div>
 
         <div>

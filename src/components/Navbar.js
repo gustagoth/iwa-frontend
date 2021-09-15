@@ -11,10 +11,10 @@ const Navbar = ({click}) => {
 
       <ul className="navbar_links">
         <li>
-          <Link to="/">PRODUCTOS</Link>
+          <Link to="/">PRODUCTS</Link>
         </li>
         <li>
-          <Link to="/cart">CARRO</Link>
+          <Link to="/cart">CART</Link>
         </li>
         <li>
           <Link to="/info">INFO.</Link>
