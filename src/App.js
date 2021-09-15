@@ -15,6 +15,8 @@ import SideDrawer from "./components/SideDrawer";
 // context //
 import { CarritoContext } from "./context/carritoContext";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
   const [carrito, setCarrito] = useState([]);

@@ -53,6 +53,10 @@
   cursor: pointer;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .info select {
   border-style: none;
   outline: none;
