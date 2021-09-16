@@ -19,7 +19,10 @@ const CartItem = ({ remeraId, remeraPrice }) => {
   const { carrito, setCarrito } = useContext(CarritoContext);
 
   function deleteItemFromContext() {
-    const found = carrito.findIndex(element => element.remeraId === remeraId && element.remeraPrice === remeraPrice);
+    const found = carrito.findIndex(
+      (element) =>
+        element.remeraId === remeraId && element.remeraPrice === remeraPrice
+    );
     if (found > -1) {
       carrito.splice(found, 1);
     }
@@ -39,10 +42,11 @@ const CartItem = ({ remeraId, remeraPrice }) => {
       </Link>
 
       <p className="cartitem__price">${remera.price}</p>
-
-      <button className="cartitem__deleteBtn" onClick={deleteItemFromContext}>
-        <i className="fas fa-trash"></i>
-      </button>
+      <Link to="/cart">
+        <button className="cartitem__deleteBtn" onClick={deleteItemFromContext}>
+          <i className="fas fa-trash"></i>
+        </button>
+      </Link>
     </div>
   );
 };

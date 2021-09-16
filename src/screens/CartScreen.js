@@ -34,7 +34,8 @@ const CartScreen = () => {
         </div>
 
         <div>
-          <button>Proceed to checkout</button>
+          <button>PROCEED TO CHECKOUT
+          </button>
         </div>
       </div>
     </div>

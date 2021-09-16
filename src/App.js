@@ -15,12 +15,13 @@ import SideDrawer from "./components/SideDrawer";
 // context //
 import { CarritoContext } from "./context/carritoContext";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import StartScreen from "./screens/StartScreen";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
   const [carrito, setCarrito] = useState([]);
-  const carritoMemo = useMemo(() => ({carrito, setCarrito}), [carrito]);
+  const carritoMemo = useMemo(() => ({ carrito, setCarrito }), [carrito]);
 
   return (
     <CarritoContext.Provider value={carritoMemo}>
@@ -30,7 +31,8 @@ function App() {
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
         <main>
           <Switch>
-            <Route exact path="/" component={HomeScreen} />
+            <Route exact path="/" component={StartScreen} />
+            <Route exact path="/home" component={HomeScreen} />
             <Route exact path="/product/:id" component={ProductScreen} />
             <Route exact path="/cart" component={CartScreen} />
           </Switch>

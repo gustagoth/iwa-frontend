@@ -42,15 +42,15 @@
   padding: 10px 93px;
   font-family: Montserrat;
   font-weight: 450;
-  background-color: #303030;
+  background-color: #070707;
   color: #f3ede9;
   cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.8;
 }
 
 .info__venta > p > button:hover {
-  background-color:black;
-  color: #f3ede9;
-  cursor: pointer;
+  opacity: 1;
 }
 
 .hidden {
@@ -65,6 +65,15 @@
   background-color: #f3ede9;
   color: #070707;
 }
+
+.info select > option {
+  border-style: none;
+  outline: none;
+  font-family: Helvetica;
+  background-color: f3ede9;
+  color: #070707;
+}
+
 
 .size__alert,.success__alert {
   width: 500px;

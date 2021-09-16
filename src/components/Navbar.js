@@ -11,7 +11,7 @@ const Navbar = ({click}) => {
 
       <ul className="navbar_links">
         <li>
-          <Link to="/">PRODUCTS</Link>
+          <Link to="/home">PRODUCTS</Link>
         </li>
         <li>
           <Link to="/cart">CART</Link>
