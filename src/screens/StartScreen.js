@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import video from "../resources/video.mp4"
 
 const StartScreen = () => {
   return (

@@ -12,7 +12,8 @@ const Product = ({
   return (
     <Link to={`/product/${productId}`} className="product__link">
       <div className="hvrbox">
-        <img src={frontimgurl} alt={name} className="hvrbox-layer_bottom" />
+        <img src={frontimgurl} alt={name} className="
+        " />
         <div className="hvrbox-layer_top">
           <div className="hvrbox-text">{name}</div>
         </div>

@@ -1,7 +1,12 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import React, {useContext} from "react";
+import { CarritoContext } from "../context/carritoContext";
 
 const Navbar = ({click}) => {
+
+  const { carrito } = useContext(CarritoContext);
+
   return (
     <nav className="navbar">
       
@@ -14,7 +19,9 @@ const Navbar = ({click}) => {
           <Link to="/home">PRODUCTS</Link>
         </li>
         <li>
-          <Link to="/cart">CART</Link>
+          <Link to="/cart">
+            CART {carrito.length!==0?<span class="badge rounded-pill bg-success">{carrito.length}</span>:""}
+            </Link>
         </li>
         <li>
           <Link to="/info">INFO.</Link>

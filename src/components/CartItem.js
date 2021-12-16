@@ -24,9 +24,11 @@ const CartItem = ({ remeraId, remeraPrice }) => {
         element.remeraId === remeraId && element.remeraPrice === remeraPrice
     );
     if (found > -1) {
-      carrito.splice(found, 1);
+      var filtered = carrito.filter(function(value, index, arr){
+        return index!=found;
+      });
     }
-    setCarrito(carrito);
+    setCarrito(filtered);
   }
 
   return (

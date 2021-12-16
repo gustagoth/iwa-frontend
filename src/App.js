@@ -17,6 +17,7 @@ import { CarritoContext } from "./context/carritoContext";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import StartScreen from "./screens/StartScreen";
+import PayScreen from "./screens/PayScreen";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/home" component={HomeScreen} />
             <Route exact path="/product/:id" component={ProductScreen} />
             <Route exact path="/cart" component={CartScreen} />
+            <Route exact path="/pay" component={PayScreen} />
           </Switch>
         </main>
       </Router>

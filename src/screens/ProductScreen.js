@@ -2,14 +2,12 @@ import "./ProductScreen.css";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
-import sleep from "../utils/Utils";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProductScreen = () => {
   const { id } = useParams();
 
   const [remera, setRemera] = useState([]);
-
-  const [alert, setAlert] = useState([]);
 
   const { carrito, setCarrito } = useContext(CarritoContext);
 
@@ -36,18 +34,15 @@ const ProductScreen = () => {
         remeraName: remera.name,
       };
       setCarrito([...carrito, remeraAgregada]);
-      setAlert(1);
-      await sleep(1000);
-      setAlert(0);
+      toast.success("SHIRT ADDED TO THE CART!");
     } else {
-      setAlert(2);
-      await sleep(1000);
-      setAlert(0);
+      toast.error("SHIRT SIZE MUST BE SELECTED");
     }
   }
 
   return (
     <div className="productscreen">
+      <Toaster position="bottom-right" reverseOrder={false} />
       <div className="productscreen__left">
         <div className="image">
           <img src={remera.frontimgurl} alt="product name" />
@@ -121,20 +116,6 @@ const ProductScreen = () => {
           </div>
         </div>
       </div>
-      {alert === 1 ? (
-        <div className="alert alert-success" role="alert">
-          SHIRT ADDED TO THE CART!
-        </div>
-      ) : (
-        ""
-      )}
-      {alert === 2 ? (
-        <div className="alert alert-danger" role="alert">
-          SHIRT SIZE MUST BE SELECTED
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 };
